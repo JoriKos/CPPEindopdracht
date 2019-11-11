@@ -26,7 +26,8 @@ int main()
 	std::array<std::string,4> LVEL = {""}; //Het leven van een loser
 	std::array<std::string,4> PJ = {""}; //Percy Jackson
 
-	while (true) {
+	while (true) 
+	{
 		int antwoord = console.Vraag("Welkom bij de bibliotheek. Kies een nummer:");
 		printArray(boeken);
 	}
