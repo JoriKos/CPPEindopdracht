@@ -7,7 +7,7 @@ void printArray(std::vector<std::string> tempArray)
 {
 	for (int i = 0; i < tempArray.size(); i++)
 	{
-		std::cout << tempArray[i] << std::endl;
+		std::cout << tempArray[i] << std::endl; //Print de array door middel van een for loop
 	}
 }
 
@@ -29,9 +29,8 @@ int main()
 
 	while (true) 
 	{
-		
 		printArray(boeken);
-		int antwoord = console.Vraag("Welkom bij de bibliotheek. Kies een nummer:");
+		int antwoord = console.Vraag("Welkom bij de bibliotheek. Kies een nummer:");  // Antwoord wordt teruggegeven als een int
 		switch (antwoord)
 		{
 		case 1:
@@ -47,10 +46,10 @@ int main()
 			printArray(PJ);
 			break;
 		case 5:
-			std::string input;
+			std::string tBoek;
 			std::cout << "Welk boek wil je toevoegen?" << std::endl;
-			std::cin >> input;
-			boeken[5] = input;
+			std::cin >> tBoek;
+			boeken[4] = "5. " + tBoek; // Vervangt 5e positie met de input
 			printArray(boeken);
 		}
 	}
