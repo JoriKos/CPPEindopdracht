@@ -46,10 +46,10 @@ int main()
 			printArray(PJ);
 			break;
 		case 5:
-			std::cout << "Welk boek wil je toevoegen?" << std::endl;
 			std::string tBoek;
+			std::cout << "Welk boek wil je toevoegen?" << std::endl;
 			std::cin >> tBoek;
-			boeken[4] = "5. " + tBoek;
+			boeken[4] = "5. " + tBoek; // Vervangt 5e positie met de input
 			printArray(boeken);
 			break;
 		}
