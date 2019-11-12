@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
-#include <array>
+#include <vector>
 #include "ConsoleInOut.h"
 
-void printArray(std::array<std::string, 4> tempArray)
+void printArray(std::vector<std::string> tempArray)
 {
 	for (int i = 0; i < tempArray.size(); i++)
 	{
@@ -13,22 +13,45 @@ void printArray(std::array<std::string, 4> tempArray)
 
 int main()
 {
-	//To do:
-	//Input vragen
-	//HP, LVEL, PJ selectie maken
+	/*To do:
+	HP, LVEL, PJ selectie maken
+	*/
 	ConsoleInOut console;
-	std::array<std::string,4> boeken = { "1. Serieloze boeken",
+	std::vector<std::string> boeken = { "1. Serieloze boeken",
 		"2. Harry Potter serie, door J.K. Rowling",
 		"3. Het Leven van een Loser serie, door Jeff Kinney", 
-		"4. Percy Jackson serie, door Rick Riordan"};
-	std::array<std::string,4> SLB = { "Soldaat van Oranje, door Erik Hazelhoff Roelfzema" }; //Serieloze boeken
-	std::array<std::string,4> HP = {""}; //Harry Potter
-	std::array<std::string,4> LVEL = {""}; //Het leven van een loser
-	std::array<std::string,4> PJ = {""}; //Percy Jackson
+		"4. Percy Jackson serie, door Rick Riordan",
+		"5. Voeg een eigen boek toe"};
+	std::vector<std::string> SLB = { "Soldaat van Oranje, door Erik Hazelhoff Roelfzema"}; //Serieloze boeken
+	std::vector<std::string> HP = {"test"}; //Harry Potter
+	std::vector<std::string> LVEL = {""}; //Het leven van een loser
+	std::vector<std::string> PJ = {""}; //Percy Jackson
 
 	while (true) 
 	{
-		int antwoord = console.Vraag("Welkom bij de bibliotheek. Kies een nummer:");
+		
 		printArray(boeken);
+		int antwoord = console.Vraag("Welkom bij de bibliotheek. Kies een nummer:");
+		switch (antwoord)
+		{
+		case 1:
+			printArray(SLB);
+			break;
+		case 2:
+			printArray(HP);
+			break;
+		case 3:
+			printArray(LVEL);
+			break;
+		case 4:
+			printArray(PJ);
+			break;
+		case 5:
+			std::string input;
+			std::cout << "Welk boek wil je toevoegen?" << std::endl;
+			std::cin >> input;
+			boeken[5] = input;
+			printArray(boeken);
+		}
 	}
 }
