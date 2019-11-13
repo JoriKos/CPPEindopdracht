@@ -48,7 +48,7 @@ int main()
 		case 5:
 			std::cout << "Welk boek wil je toevoegen?" << std::endl;
 			std::string tBoek;
-			std::cin >> tBoek;
+			std::getline(std::cin, tBoek);
 			boeken[4] = "5. " + tBoek;
 			printArray(boeken);
 			break;
