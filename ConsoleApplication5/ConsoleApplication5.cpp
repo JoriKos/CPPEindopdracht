@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "ConsoleInOut.h"
+#include <Windows.h>
 
 void printArray(std::vector<std::string> tempArray)
 {
@@ -46,11 +47,11 @@ int main()
 			printArray(PJ);
 			break;
 		case 5:
-			std::cout << "Welk boek wil je toevoegen?" << std::endl;
-			std::string tBoek;
-			std::getline(std::cin, tBoek);
-			boeken[4] = "5. " + tBoek;
-			printArray(boeken);
+			std::cout << "Welk boek wil je toevoegen en wie is de schrijver? Maximaal 500 karakters" << std::endl; 
+			char tBoek[500]; //Maximaal 500 karakters van een titel
+			std::cin.getline(tBoek,500); //Pakt input
+			std::string str(tBoek); //Zet char array om in een string
+			boeken[4] = "5. " + str;
 			break;
 		}
 	}
