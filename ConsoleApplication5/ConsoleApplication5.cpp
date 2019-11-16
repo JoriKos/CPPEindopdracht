@@ -1,16 +1,6 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include "ConsoleInOut.h"
 #include <Windows.h>
-
-void printArray(std::vector<std::string> tempArray)
-{
-	for (int i = 0; i < tempArray.size(); i++)
-	{
-		std::cout << tempArray[i] << std::endl; //Print de array door middel van een for loop
-	}
-}
 
 int main()
 {
@@ -30,25 +20,25 @@ int main()
 
 	while (true) 
 	{
-		printArray(boeken);
+		console.printArray(boeken);
 		int antwoord = console.Vraag("Welkom bij de bibliotheek. Kies een nummer:");  // Antwoord wordt teruggegeven als een int
 		switch (antwoord)
 		{
 		case 1:
-			printArray(SLB);
+			console.printArray(SLB);
 			break;
 		case 2:
-			printArray(HP);
+			console.printArray(HP);
 			break;
 		case 3:
-			printArray(LVEL);
+			console.printArray(LVEL);
 			break;
 		case 4:
-			printArray(PJ);
+			console.printArray(PJ);
 			break;
 		case 5:
-			std::cout << "Welk boek wil je toevoegen en wie is de schrijver? Maximaal 500 karakters" << std::endl; 
-			char tBoek[500]; //Maximaal 500 karakters van een titel
+			std::cout << "Welk boek wil je toevoegen en wie is de schrijver? Maximaal 500 karakters" << std::endl;
+			char tBoek[500]; //Char array met maximaal 500 karakters voor een titel + schrijver
 			std::cin.getline(tBoek,500); //Pakt input
 			std::string str(tBoek); //Zet char array om in een string
 			boeken[4] = "5. " + str;
